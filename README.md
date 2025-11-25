@@ -24,7 +24,7 @@ In other words, every particle is assigned its own thread in the CUDA Kernel Imp
 
 Additional threads will also be included to handle the synchronization of global bests across each dimension.
 
-The Project was ran on a Cloud Server with a Tesla V100 as a 
+The Project was ran on a Cloud Server with a Tesla V100 for the GPU
 
 # A. Execution Output and Correctness Check
 
