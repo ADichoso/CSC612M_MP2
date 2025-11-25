@@ -41,9 +41,13 @@ The values in the outputs of the CUDA kernels have to be equal to the results in
 
 The C and CUDA Kernels were tested using 3 formulas with known global minimums:
 1. The Sphere Function
+
 ![](Figures/Sphere.png)
+
 3. The Ackley Function
+
 ![](Figures/Ackley.png)
+
 5. The Rosenbrock Function
 ![](Figures/Rosenbrock.png)
 
