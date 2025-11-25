@@ -13,18 +13,20 @@ John Kirsten Espiritu
 ## Project Details
 
 CPSO is an optimization algorithm that searches for optimal values in a given function by distributing agents (called particles) across each swarms, with each swarm assigned to optimize 1 dimension.
-Each agent is assigned to search for the optimal value in 1 dimension, collaborating with other agents to find the overall optimal value in the entire space.
+Each agent is assigned to search for the optimal value in 1 dimension, collaborating with other agents to find the overall optimal value in the entire space. This algorithm is directly lifted from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>.
+
+![](Figures/CPSO.png)
+
+CPSO Algorithm from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>
 
 This Project includes C and CUDA Kernels to compare the effectiveness of SIMT Parallelism Techniques using CUDA to improve the performance of the Sequential implementation of CPSO.
 
 Through the use of CUDA, the algorithm will be parallelized by dedicating 1 block to every swarm in the function.
 Each block will also be assigned 1 thread to every particle assigned to a given dimension.
 
-In other words, every particle is assigned its own thread in the CUDA Kernel Implementation of CPSO.
+<b>In other words, every particle is assigned its own thread in the CUDA Kernel Implementation of CPSO.</b>
 
-Additional threads will also be included to handle the synchronization of global bests across each dimension.
-
-The Project was ran on a Cloud Server with a Tesla V100 for the GPU
+The Project was ran on a Cloud Server with a Tesla V100 for the GPU.
 
 # A. Execution Output and Correctness Check
 
@@ -39,8 +41,11 @@ The values in the outputs of the CUDA kernels have to be equal to the results in
 
 The C and CUDA Kernels were tested using 3 formulas with known global minimums:
 1. The Sphere Function
-2. The Ackley Function
-3. The Rosenbrock Function
+![](Figures/Sphere.png)
+3. The Ackley Function
+![](Figures/Ackley.png)
+5. The Rosenbrock Function
+![](Figures/Rosenbrock.png)
 
 Additionally, the C and CUDA kernels tested variants of each formula containing 4, 256, 1024, and 8192 dimensions.
 Due to time constraints, however, the C kernels were not tested with 8192 dimensions.
@@ -98,15 +103,15 @@ This resulted in the following results:
 Interestingly, the C Kernel performed faster than the CUDA Kernel in 4 dimensions, indicated by the lower speedup found in this table:
 ![](Figures/SpeedupTimes.png)
 
-We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions was because of (REASON HERE).
+We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions possibly because of the overhead needed to execute CUDA Kernels. Thus, in low dimension cases, the sequential version implemented in the C Kernel performs faster.
 
-The CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. This is expected because of the time complexity of CPSO. (EXPAND MORE ON HERE)
+However, the CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. This is expected because of the time complexity of CPSO. With 30 runs, 256 or more dimensions, with 100 particles and 500 iterations of CPSO, the workload for the kernels grows exponentially. Thus, the parallelization of the CUDA Kernel is more favorable in higher dimensions.
 
+Additionally, we can observe for the CUDA Kernels that the Sphere Function consistently performs faster than the other functions, followed by the Rosenbrock, and the Ackley Function which obtained the slowest performance amongst CUDA Kernels. We believe that this is due to the GPU architecture being better suited at computing simpler operations like that of the Sphere function. GPUs are designed for this use case as it is used to process graphics operations which consist of millions of these simple equations, but not complex equations like that of the Ackley Function (which has sine and cosine operations).
 
 # E. Reflection
 
 - GPU and CPU architecture differences found very well in this project - Miles of speedup compared to sequential with the cost of needing additional hardware
-- GPU works better in simpler functions (See Differences in Execution Time between functions)
 - Interesting to see the evolution of our computer science studies all culminating into this project:
 - Time Complexity Analyses Techniques of Data Structures and Algorithms Class
 - Parallelism Techniques in Advanced Databases, Operating Systems, and Distributed Computing Classes
