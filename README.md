@@ -5,9 +5,7 @@ This project computes for the matrix vector product of a given matrix and vector
 Group Members:
 
 Aaron Gabrielle Dichoso
-
 Luis Miguel Antonio Razon
-
 John Kirsten Espiritu
 
 There are 4 versions of the computation performed to compare execution time between methods:
