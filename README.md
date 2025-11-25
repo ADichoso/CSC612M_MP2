@@ -41,8 +41,11 @@ The values in the outputs of the CUDA kernels have to be equal to the results in
 
 The C and CUDA Kernels were tested using 3 formulas with known global minimums:
 1. The Sphere Function
-2. The Ackley Function
-3. The Rosenbrock Function
+![](Figures/Sphere.png)
+3. The Ackley Function
+![](Figures/Ackley.png)
+5. The Rosenbrock Function
+![](Figures/Rosenbrock.png)
 
 Additionally, the C and CUDA kernels tested variants of each formula containing 4, 256, 1024, and 8192 dimensions.
 Due to time constraints, however, the C kernels were not tested with 8192 dimensions.
