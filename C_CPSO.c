@@ -174,10 +174,6 @@ void particleAction(Swarm *swarm, int swarmIdx, Particle *particle, double *resu
   {
     swarm->globalBestFitness = particle->personalBestFitness;
     swarm->globalBest = particle->personalBest;
-    if (swarm->globalBestFitness < objectiveFunc(n, result))
-    {
-      result[swarmIdx] = swarm->globalBest;
-    }
   }
 
   // stopping condition -- Not included to measure raw machine performance
