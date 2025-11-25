@@ -16,6 +16,7 @@ CPSO is an optimization algorithm that searches for optimal values in a given fu
 Each agent is assigned to search for the optimal value in 1 dimension, collaborating with other agents to find the overall optimal value in the entire space. This algorithm is directly lifted from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>.
 
 ![](Figures/CPSO.png)
+
 CPSO Algorithm from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>
 
 This Project includes C and CUDA Kernels to compare the effectiveness of SIMT Parallelism Techniques using CUDA to improve the performance of the Sequential implementation of CPSO.
