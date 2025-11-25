@@ -98,9 +98,11 @@ Here is the same data, visualized using a bar graph:
 ### Function Speedup
 The Speedup of utilizing ASM kernel functions compared to the performance of the C kernel was also obtained by dividing the average execution time of the C kernel with the average execution time of the ASM kernel functions.
 This resulted in the following results:
+
 ![](Figures/cuda_vs_c_plot.png)
 
 Interestingly, the C Kernel performed faster than the CUDA Kernel in 4 dimensions, indicated by the lower speedup found in this table:
+
 ![](Figures/SpeedupTimes.png)
 
 We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions possibly because of the overhead needed to execute CUDA Kernels. Thus, in low dimension cases, the sequential version implemented in the C Kernel performs faster.
