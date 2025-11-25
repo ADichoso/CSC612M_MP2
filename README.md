@@ -45,40 +45,40 @@ Additionally, the C and CUDA kernels tested variants of each formula containing 
 Due to time constraints, however, the C kernels were not tested with 8192 dimensions.
 
 ## C Kernel Executions
-![](Figures/C_all.png)
+![](screenshots/C_all.png)
 
 ## CUDA Kernel Executions
 ### N = 4 (2^2)
 #### Sphere
-![](Figures/CUDA_Sphere_4.png)
+![](screenshots/CUDA_Sphere_4.png)
 #### Ackley
-![](Figures/CUDA_Ackley_4.png)
+![](screenshots/CUDA_Ackley_4.png)
 #### Rosenbrock
-![](Figures/CUDA_Rosenbrock_4.png)
+![](screenshots/CUDA_Rosenbrock_4.png)
 
 ### N = 256 (2^8)
 #### Sphere
-![](Figures/CUDA_Sphere_256.png)
+![](screenshots/CUDA_Sphere_256.png)
 #### Ackley
-![](Figures/CUDA_Ackley_256.png)
+![](screenshots/CUDA_Ackley_256.png)
 #### Rosenbrock
-![](Figures/CUDA_Rosenbrock_256.png)
+![](screenshots/CUDA_Rosenbrock_256.png)
 
 ### N = 1024 (2^10)
 #### Sphere
-![](Figures/CUDA_Sphere_2(10).png)
+![](screenshots/CUDA_Sphere_2(10).png)
 #### Ackley
-![](Figures/CUDA_Ackley_2(10).png)
+![](screenshots/CUDA_Ackley_2(10).png)
 #### Rosenbrock
-![](Figures/CUDA_Rosenbrock_2(10).png)
+![](screenshots/CUDA_Rosenbrock_2(10).png)
 
 ### N = 8192 (2^13)
 #### Sphere
-![](Figures/CUDA_Sphere_2(13).png)
+![](screenshots/CUDA_Sphere_2(13).png)
 #### Ackley
-![](Figures/CUDA_Ackley_2(13).png)
+![](screenshots/CUDA_Ackley_2(13).png)
 #### Rosenbrock
-![](Figures/CUDA_Rosenbrock_2(13).png)
+![](screenshots/CUDA_Rosenbrock_2(13).png)
 
 # B. Execution Times
 ## Summary of Results 
