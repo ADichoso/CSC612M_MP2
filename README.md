@@ -13,7 +13,10 @@ John Kirsten Espiritu
 ## Project Details
 
 CPSO is an optimization algorithm that searches for optimal values in a given function by distributing agents (called particles) across each swarms, with each swarm assigned to optimize 1 dimension.
-Each agent is assigned to search for the optimal value in 1 dimension, collaborating with other agents to find the overall optimal value in the entire space.
+Each agent is assigned to search for the optimal value in 1 dimension, collaborating with other agents to find the overall optimal value in the entire space. This algorithm is directly lifted from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>.
+
+![](Figures/CPSO.png)
+CPSO Algorithm from <a href="https://dl.icdst.org/pdfs/files/8faf7b40f067ab11c14ab935dee8eab0.pdf"> Bergh & Engelbrecht (2004)</a>
 
 This Project includes C and CUDA Kernels to compare the effectiveness of SIMT Parallelism Techniques using CUDA to improve the performance of the Sequential implementation of CPSO.
 
@@ -24,7 +27,7 @@ In other words, every particle is assigned its own thread in the CUDA Kernel Imp
 
 Additional threads will also be included to handle the synchronization of global bests across each dimension.
 
-The Project was ran on a Cloud Server with a Tesla V100 for the GPU
+The Project was ran on a Cloud Server with a Tesla V100 for the GPU.
 
 # A. Execution Output and Correctness Check
 
