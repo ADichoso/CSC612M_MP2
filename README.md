@@ -111,11 +111,8 @@ Additionally, we can observe for the CUDA Kernels that the Sphere Function consi
 
 # E. Reflection
 
-- GPU and CPU architecture differences found very well in this project - Miles of speedup compared to sequential with the cost of needing additional hardware
-- Interesting to see the evolution of our computer science studies all culminating into this project:
-- Time Complexity Analyses Techniques of Data Structures and Algorithms Class
-- Parallelism Techniques in Advanced Databases, Operating Systems, and Distributed Computing Classes
-- Finally the use of SIMT Techniques in Advanced Computer Architecture in this class
-- We find it very interesting how all of these classes helped us learn to how best utilize computer architecture according to the use case.
+In this project, we were able to experience the differences between running an algorithm on CPU vs GPU. It was an interesting challenge to translate the code and seeing that extra effort reflect in additional performance upgrades without having to buy new hardware. Particularly it was interesting to see that the CPU was actually able to outperform the GPU when the number of dimensions was small, but GPU was really able to shine when expanding to more dimensions. This probably means that it might not be necessary to go through the effort of running something on the GPU if the task is relatively simple.
+
+CUDA programming harkens back to previous techniques learned throughout our time in Computer Science: Parallelism from Distributed Computing classes, time complexity analysis from CSALGCM, and previous classes on Computer Architecture and Assembly programming. Each technique has its use-case, strengths, and weaknesses; and CUDA adds to our toolbelt of ways to make the *computer run fast*. Now that we're nearing the end of our journey, we ponder on how everything we've learned up to this point has culminated in us growing into proficient software developers. We can only look ahead thinking of how CUDA can be applied to our thesis up ahead and our future as professionals in the field..
 
 
