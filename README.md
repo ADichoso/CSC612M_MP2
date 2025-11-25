@@ -24,6 +24,7 @@ In other words, every particle is assigned its own thread in the CUDA Kernel Imp
 
 Additional threads will also be included to handle the synchronization of global bests across each dimension.
 
+The Project was ran on a Cloud Server with a Tesla V100 as a 
 
 # A. Execution Output and Correctness Check
 
@@ -94,12 +95,22 @@ The Speedup of utilizing ASM kernel functions compared to the performance of the
 This resulted in the following results:
 ![](Figures/cuda_vs_c_plot.png)
 
-As expected, all ASM kernel functions obtained a speedup value greater than 1, indicating that our implementation of the matrix vector product in the ASM kernels consistently obtained faster execution times compared to the C kernel.
+Interestingly, the C Kernel performed faster than the CUDA Kernel in 4 dimensions, indicated by the lower speedup found in this table:
+![](Figures/SpeedupTimes.png)
 
-Additionally, the XMM kernel version obtained a higher speedup value compared to the non-SIMD kernel version, and the YMM kernel version obtained the highest speedup value compared to the other ASM kernel versions. We see these results as expected, as the utilization of SIMD operations allowing for a higher throughput of data to be processed simultaneously, as opposed to iterating for each element in the given matrix and vector to compute for the matrix-vector product. The XMM kernel function can compute for the dot product of 4 elements in the matrix in one iteration, while the YMM kernel can process 8 elements in one iteration.
+We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions was because of (REASON HERE).
+
+The CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. This is expected because of the time complexity of CPSO. (EXPAND MORE ON HERE)
+
 
 # E. Reflection
-This project was an interesting one, as it really elucidated the group regarding the effectiveness of utilizing SIMD for parallelizable domains. In particular, we first had problems in deciding the structure of our matrix. We initially had our matrix in a row-major format, where the elements were contiguous across a row. Then, we planned to process one row at a time, but we were not satisfied with the implementation.
 
-Thus, we had thought of partially processing multiple rows at a time. The partial result would be stored while we had processed in a per-column basis. Thus, we had changed our matrix implementation to a column-major format, where the addresses of elements were contiguous along a column. This design was what allowed us to create the YMM and XMM kernel versions that we had implemented in this program.
+- GPU and CPU architecture differences found very well in this project - Miles of speedup compared to sequential with the cost of needing additional hardware
+- GPU works better in simpler functions (See Differences in Execution Time between functions)
+- Interesting to see the evolution of our computer science studies all culminating into this project:
+- Time Complexity Analyses Techniques of Data Structures and Algorithms Class
+- Parallelism Techniques in Advanced Databases, Operating Systems, and Distributed Computing Classes
+- Finally the use of SIMT Techniques in Advanced Computer Architecture in this class
+- We find it very interesting how all of these classes helped us learn to how best utilize computer architecture according to the use case.
+
 
