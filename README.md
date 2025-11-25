@@ -28,7 +28,7 @@ Each block will also be assigned 1 thread to every particle assigned to a given 
 
 The Project was ran on a Cloud Server with a Tesla V100 for the GPU.
 
-# A. Execution Output and Correctness Check
+# A. Execution Output
 
 Below are screenshots of the program execution. 
 Each kernel was executed 30 times to obtain the average execution time. 
@@ -86,6 +86,17 @@ Due to time constraints, however, the C kernels were not tested with 8192 dimens
 #### Rosenbrock
 ![](screenshots/CUDA_Rosenbrock_2(13).png)
 
+
+# B. Correctness Check
+The outputs of each kernel was compared to the objective function output. From the correctness checking, we found that the Rosenbrack Function was consistently off. We believe that this is due to the function being known to be hard to optimize due to having a lot of local minima, causing local traps to occur in our Kernel implementations.
+
+## C Correctness Checks
+![](Figures/C_correctness.png)
+
+## CUDA Correctness Checks
+![](Figures/CUDA_correctness.png)
+
+
 # B. Execution Times
 ## Summary of Results 
 ### Average Execution Times
@@ -107,7 +118,7 @@ Interestingly, the C Kernel performed faster than the CUDA Kernel in 4 dimension
 
 We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions possibly because of the overhead needed to execute CUDA Kernels. Thus, in low dimension cases, the sequential version implemented in the C Kernel performs faster.
 
-However, the CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. This is expected because of the time complexity of CPSO. With 30 runs, 256 or more dimensions, with 100 particles and 500 iterations of CPSO, the workload for the kernels grows exponentially. Thus, the parallelization of the CUDA Kernel is more favorable in higher dimensions.
+However, the CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. With 30 runs, 256 or more dimensions, with 100 particles and 500 iterations of CPSO, the workload for the kernels grows exponentially. Thus, the parallelization of the CUDA Kernel is more favorable in higher dimensions.
 
 Additionally, we can observe for the CUDA Kernels that the Sphere Function consistently performs faster than the other functions, followed by the Rosenbrock, and the Ackley Function which obtained the slowest performance amongst CUDA Kernels. We believe that this is due to the GPU architecture being better suited at computing simpler operations like that of the Sphere function. GPUs are designed for this use case as it is used to process graphics operations which consist of millions of these simple equations, but not complex equations like that of the Ackley Function (which has sine and cosine operations).
 
