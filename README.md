@@ -1,10 +1,13 @@
-# Matrix Vector Product Project
+# Cooperative Particle Swarm Optimization - Integrating Project
 
 This project computes for the matrix vector product of a given matrix and vector, and outputs it to a vector.
 
 Group Members:
+
 Aaron Gabrielle Dichoso
+
 Luis Miguel Antonio Razon
+
 John Kirsten Espiritu
 
 There are 4 versions of the computation performed to compare execution time between methods:
