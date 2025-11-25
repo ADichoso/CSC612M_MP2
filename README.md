@@ -24,9 +24,7 @@ This Project includes C and CUDA Kernels to compare the effectiveness of SIMT Pa
 Through the use of CUDA, the algorithm will be parallelized by dedicating 1 block to every swarm in the function.
 Each block will also be assigned 1 thread to every particle assigned to a given dimension.
 
-In other words, every particle is assigned its own thread in the CUDA Kernel Implementation of CPSO.
-
-Additional threads will also be included to handle the synchronization of global bests across each dimension.
+<b>In other words, every particle is assigned its own thread in the CUDA Kernel Implementation of CPSO.</b>
 
 The Project was ran on a Cloud Server with a Tesla V100 for the GPU.
 
