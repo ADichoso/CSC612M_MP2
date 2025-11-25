@@ -111,7 +111,7 @@ Here is the same data, visualized using a bar graph:
 ![](Figures/c_vs_cuda_avg_times.png)
 
 ### Function Speedup
-The Speedup of utilizing ASM kernel functions compared to the performance of the C kernel was also obtained by dividing the average execution time of the C kernel with the average execution time of the ASM kernel functions.
+The Speedup of utilizing CUDA kernel functions compared to the performance of the C kernel was also obtained by dividing the average execution time of the C kernel with the average execution time of the CUDA kernel functions.
 This resulted in the following results:
 
 ![](Figures/cuda_vs_c_plot.png)
