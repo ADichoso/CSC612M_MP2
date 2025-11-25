@@ -10,6 +10,8 @@ Luis Miguel Antonio Razon
 
 John Kirsten Espiritu
 
+Project Demo Link: https://drive.google.com/file/d/1B4jfzjMSiQUjkIjPl-LZdwS8n0g_C655/view?usp=sharing
+
 ## Project Details
 
 CPSO is an optimization algorithm that searches for optimal values in a given function by distributing agents (called particles) across each swarms, with each swarm assigned to optimize 1 dimension.
