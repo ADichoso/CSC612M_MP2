@@ -28,7 +28,7 @@ Each block will also be assigned 1 thread to every particle assigned to a given 
 
 The Project was ran on a Cloud Server with a Tesla V100 for the GPU.
 
-# A. Execution Output and Correctness Check
+# A. Execution Output
 
 Below are screenshots of the program execution. 
 Each kernel was executed 30 times to obtain the average execution time. 
@@ -85,6 +85,17 @@ Due to time constraints, however, the C kernels were not tested with 8192 dimens
 ![](screenshots/CUDA_Ackley_2(13).png)
 #### Rosenbrock
 ![](screenshots/CUDA_Rosenbrock_2(13).png)
+
+
+# B. Correctness Check
+The outputs of each kernel was compared to the objective function output. From the correctness checking, we found that the Rosenbrack Function was consistently off. We believe that this is due to the function being known to be hard to optimize due to having a lot of local minima, causing local traps to occur in our Kernel implementations.
+
+## C Correctness Checks
+![](Figures/C_correctness.png)
+
+## CUDA Correctness Checks
+![](Figures/CUDA_correctness.png)
+
 
 # B. Execution Times
 ## Summary of Results 
