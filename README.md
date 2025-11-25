@@ -107,7 +107,7 @@ Interestingly, the C Kernel performed faster than the CUDA Kernel in 4 dimension
 
 We think that the C Kernel performed better than the CUDA Kernel in the lowest number of dimensions possibly because of the overhead needed to execute CUDA Kernels. Thus, in low dimension cases, the sequential version implemented in the C Kernel performs faster.
 
-However, the CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. This is expected because of the time complexity of CPSO. With 30 runs, 256 or more dimensions, with 100 particles and 500 iterations of CPSO, the workload for the kernels grows exponentially. Thus, the parallelization of the CUDA Kernel is more favorable in higher dimensions.
+However, the CUDA Kernel consistently performed immensely better in dimension configurations higher than 4. With 30 runs, 256 or more dimensions, with 100 particles and 500 iterations of CPSO, the workload for the kernels grows exponentially. Thus, the parallelization of the CUDA Kernel is more favorable in higher dimensions.
 
 Additionally, we can observe for the CUDA Kernels that the Sphere Function consistently performs faster than the other functions, followed by the Rosenbrock, and the Ackley Function which obtained the slowest performance amongst CUDA Kernels. We believe that this is due to the GPU architecture being better suited at computing simpler operations like that of the Sphere function. GPUs are designed for this use case as it is used to process graphics operations which consist of millions of these simple equations, but not complex equations like that of the Ackley Function (which has sine and cosine operations).
 
